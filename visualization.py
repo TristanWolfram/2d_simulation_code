@@ -1984,7 +1984,7 @@ def make_boat_scenario_bigger(
     # np.pi = West
     # 3*np.pi/2 = North
 
-    car1 = Vehicle(
+    boat0 = Vehicle(
         np.array([80, 10]),
         length=8.0,
         width=1.42,
@@ -1993,7 +1993,7 @@ def make_boat_scenario_bigger(
         tau_throttle=0.4,
         dt=dt,
     )
-    car2 = Vehicle(
+    boat1 = Vehicle(
         np.array([10, 75]),
         length=8.0,
         width=1.42,
@@ -2002,7 +2002,7 @@ def make_boat_scenario_bigger(
         tau_throttle=0.4,
         dt=dt,
     )
-    car3 = Vehicle(
+    boat2 = Vehicle(
         np.array([120, 10]),
         length=8.0,
         width=1.42,
@@ -2011,7 +2011,7 @@ def make_boat_scenario_bigger(
         tau_throttle=0.4,
         dt=dt,
     )
-    car4 = Vehicle(
+    boat3 = Vehicle(
         np.array([80, 140]),
         length=8.0,
         width=1.42,
@@ -2020,7 +2020,7 @@ def make_boat_scenario_bigger(
         tau_throttle=0.4,
         dt=dt,
     )
-    car5 = Vehicle(
+    boat4 = Vehicle(
         np.array([290, 80]),
         length=8.0,
         width=1.42,
@@ -2029,7 +2029,7 @@ def make_boat_scenario_bigger(
         tau_throttle=0.4,
         dt=dt,
     )
-    car6 = Vehicle(
+    boat5 = Vehicle(
         np.array([120, 140]),
         length=8.0,
         width=1.42,
@@ -2038,7 +2038,7 @@ def make_boat_scenario_bigger(
         tau_throttle=0.4,
         dt=dt,
     )
-    car7 = Vehicle(
+    boat6 = Vehicle(
         np.array([90, 90]),
         length=7.0,
         width=2.3,
@@ -2047,7 +2047,7 @@ def make_boat_scenario_bigger(
         tau_throttle=0.2,
         dt=dt,
     )
-    car8 = Vehicle(
+    boat7 = Vehicle(
         np.array([140, 50]),
         length=7.0,
         width=2.3,
@@ -2056,7 +2056,7 @@ def make_boat_scenario_bigger(
         tau_throttle=0.2,
         dt=dt,
     )
-    car9 = Vehicle(
+    boat8 = Vehicle(
         np.array([190, 90]),
         length=7.0,
         width=2.3,
@@ -2067,15 +2067,15 @@ def make_boat_scenario_bigger(
     )
 
     objects = [
-        car1,
-        car2,
-        car3,
-        car4,
-        car5,
-        car6,
-        car7,
-        car8,
-        car9,
+        boat0,
+        boat1,
+        boat2,
+        boat3,
+        boat4,
+        boat5,
+        boat6,
+        boat7,
+        boat8,
         outer_rim,
         pier1,
         pier2,
@@ -2083,7 +2083,237 @@ def make_boat_scenario_bigger(
         building2,
         building3,
     ]
-    cars = [car1, car2, car3, car4, car5, car6, car7, car8, car9]
+    cars = [boat0, boat1, boat2, boat3, boat4, boat5, boat6, boat7, boat8]
+
+    if viz:
+        MAP_DIMENSIONS = (height * scale, width * scale)
+        gfx = Visualization(
+            MAP_DIMENSIONS,
+            pixels_per_unit=pixels_per_unit,
+            map_img_path="graphics/test_map_2.png",
+        )  # Also initializes the display
+        return gfx, objects, cars
+    else:
+        return objects, cars
+    
+
+def make_windmill_scnenario(
+    scale=1, height=1080, width=1920, scale_boat_phys=1, pixels_per_unit=6, viz=True, dt=1.0
+):
+    # Spawn in the walls:
+    # vertices = PointsOnCircum(r=100, n=50, center=(75, 55))
+
+    # Define the outer rim (harbor boundary)
+    outer_rim = Object(
+        center=np.array([0, 0]),
+        vertices=np.array(
+            [[60, 0], [30, 5], [5, 30], [0, 60], [0, 100], [5, 130], [30, 155], [60, 160], 
+            [240, 160], [270, 155], [295, 130], [300, 100], [300, 60], [295, 30], [270, 5], [240, 0]]  # Outer boundary of the harbor
+        ),
+    )
+
+    windmill1 = Object(
+        name="wm1",
+        center=np.array([0, 0]),
+        vertices=np.array([[25, 25], [25, 35], [35, 35], [35, 25]]),
+    )
+    windmill2 = Object(
+        name="wm2",
+        center=np.array([0, 0]),
+        vertices=np.array([[65, 25], [65, 35], [75, 35], [75, 25]]),
+    )
+    windmill3 = Object(
+        name="wm3",
+        center=np.array([0, 0]),
+        vertices=np.array([[105, 25], [105, 35], [115, 35], [115, 25]]),
+    )
+    windmill4 = Object(
+        name="wm4",
+        center=np.array([0, 0]),
+        vertices=np.array([[145, 25], [145, 35], [155, 35], [155, 25]]),
+    )
+    windmill5 = Object(
+        name="wm5",
+        center=np.array([0, 0]),
+        vertices=np.array([[185, 25], [185, 35], [195, 35], [195, 25]]),
+    )
+    windmill6 = Object(
+        name="wm6",
+        center=np.array([0, 0]),
+        vertices=np.array([[225, 25], [225, 35], [235, 35], [235, 25]]),
+    )
+    windmill7 = Object(
+        name="wm7",
+        center=np.array([0, 0]),
+        vertices=np.array([[265, 25], [265, 35], [275, 35], [275, 25]]),
+    )
+
+    windmill8 = Object(
+        name="wm8",
+        center=np.array([0, 0]),
+        vertices=np.array([[25, 75], [25, 85], [35, 85], [35, 75]]),
+    )
+    windmill9 = Object(
+        name="wm9",
+        center=np.array([0, 0]),
+        vertices=np.array([[65, 75], [65, 85], [75, 85], [75, 75]]),
+    )
+    windmill10 = Object(
+        name="wm10",
+        center=np.array([0, 0]),
+        vertices=np.array([[105, 75], [105, 85], [115, 85], [115, 75]]),
+    )
+    windmill11 = Object(
+        name="wm11",
+        center=np.array([0, 0]),
+        vertices=np.array([[145, 75], [145, 85], [155, 85], [155, 75]]),
+    )
+    windmill12 = Object(
+        name="wm12",
+        center=np.array([0, 0]),
+        vertices=np.array([[185, 75], [185, 85], [195, 85], [195, 75]]),
+    )
+    windmill13 = Object(
+        name="wm13",
+        center=np.array([0, 0]),
+        vertices=np.array([[225, 75], [225, 85], [235, 85], [235, 75]]),
+    )
+    windmill14 = Object(
+        name="wm14",
+        center=np.array([0, 0]),
+        vertices=np.array([[265, 75], [265, 85], [275, 85], [275, 75]]),
+    )
+
+    windmill15 = Object(
+        name="wm15",
+        center=np.array([0, 0]),
+        vertices=np.array([[25, 125], [25, 135], [35, 135], [35, 125]]),
+    )
+    windmill16 = Object(
+        name="wm16",
+        center=np.array([0, 0]),
+        vertices=np.array([[65, 125], [65, 135], [75, 135], [75, 125]]),
+    )
+    windmill17 = Object(    
+        name="wm17",
+        center=np.array([0, 0]),
+        vertices=np.array([[105, 125], [105, 135], [115, 135], [115, 125]]),
+    )
+    windmill18 = Object(
+        name="wm18",
+        center=np.array([0, 0]),
+        vertices=np.array([[145, 125], [145, 135], [155, 135], [155, 125]]),
+    )
+    windmill19 = Object(
+        name="wm19",
+        center=np.array([0, 0]),
+        vertices=np.array([[185, 125], [185, 135], [195, 135], [195, 125]]),
+    )
+    windmill20 = Object(
+        name="wm20",
+        center=np.array([0, 0]),
+        vertices=np.array([[225, 125], [225, 135], [235, 135], [235, 125]]),
+    )
+    windmill21 = Object(
+        name="wm21",
+        center=np.array([0, 0]),
+        vertices=np.array([[265, 125], [265, 135], [275, 135], [275, 125]]),
+    )
+
+    # 0 = East
+    # np.pi/2 = South
+    # np.pi = West
+    # 3*np.pi/2 = North
+
+    boat0 = Vehicle(
+        np.array([60, 10]),
+        length=8.0,
+        width=1.42,
+        heading=3*np.pi/4,
+        tau_steering=0.4,
+        tau_throttle=0.4,
+        dt=dt,
+    )
+    boat1 = Vehicle(
+        np.array([240, 10]),
+        length=8.0,
+        width=1.42,
+        heading=np.pi/4,
+        tau_steering=0.4,
+        tau_throttle=0.4,
+        dt=dt,
+    )
+    boat2 = Vehicle(
+        np.array([150, 55]),
+        length=8.0,
+        width=1.42,
+        heading=5*np.pi/4,
+        tau_steering=0.4,
+        tau_throttle=0.4,
+        dt=dt,
+    )
+    boat3 = Vehicle(
+        np.array([150, 105]),
+        length=8.0,
+        width=1.42,
+        heading=np.pi/4,
+        tau_steering=0.4,
+        tau_throttle=0.4,
+        dt=dt,
+    )
+    boat4 = Vehicle(
+        np.array([60, 150]),
+        length=8.0,
+        width=1.42,
+        heading=3*np.pi/2,
+        tau_steering=0.4,
+        tau_throttle=0.4,
+        dt=dt,
+    )
+    boat5 = Vehicle(
+        np.array([240, 150]),
+        length=8.0,
+        width=1.42,
+        heading=3*np.pi/2,
+        tau_steering=0.4,
+        tau_throttle=0.4,
+        dt=dt,
+    )
+
+    boat6 = Vehicle(
+        np.array([35, 100]),
+        length=7.0,
+        width=2.3,
+        heading=7*np.pi/4,
+        tau_steering=0.2,
+        tau_throttle=0.2,
+        dt=dt,
+    )
+    boat7 = Vehicle(
+        np.array([175, 15]),
+        length=7.0,
+        width=2.3,
+        heading=np.pi/2,
+        tau_steering=0.2,
+        tau_throttle=0.2,
+        dt=dt,
+    )
+    boat8 = Vehicle(
+        np.array([210, 105]),
+        length=7.0,
+        width=2.3,
+        heading=7*np.pi/4,
+        tau_steering=0.2,
+        tau_throttle=0.2,
+        dt=dt,
+    )
+
+    objects = [boat0, boat1, boat2, boat3, boat4, boat5, boat6, boat7, boat8,
+        outer_rim, 
+        windmill1, windmill2, windmill3, windmill4, windmill5, windmill6, windmill7, 
+        windmill8, windmill9, windmill10, windmill11, windmill12, windmill13, windmill14, 
+        windmill15, windmill16, windmill17, windmill18, windmill19, windmill20, windmill21]
+    cars = [boat0, boat1, boat2, boat3, boat4, boat5, boat6, boat7, boat8]
 
     if viz:
         MAP_DIMENSIONS = (height * scale, width * scale)
@@ -2207,7 +2437,7 @@ def driving_with_many_boats():
     # Create a visualizer
     divider = 10
     dt = 1 / divider
-    gfx, objects, cars = make_boat_scenario_bigger(
+    gfx, objects, cars = make_windmill_scnenario(
         scale=1, scale_boat_phys=5, height=1080, width=1920, dt=dt
     )
     # gfx, objects, cars = map_tube_multi(scale=1, height=1080, width=1920, pixels_per_unit=10)
