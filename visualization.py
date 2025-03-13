@@ -2284,7 +2284,7 @@ def make_windmill_scnenario(
         np.array([35, 100]),
         length=7.0,
         width=2.3,
-        heading=7*np.pi/4,
+        heading=0,
         tau_steering=0.2,
         tau_throttle=0.2,
         dt=dt,
@@ -2298,22 +2298,22 @@ def make_windmill_scnenario(
         tau_throttle=0.2,
         dt=dt,
     )
-    boat8 = Vehicle(
-        np.array([210, 105]),
-        length=7.0,
-        width=2.3,
-        heading=7*np.pi/4,
-        tau_steering=0.2,
-        tau_throttle=0.2,
-        dt=dt,
-    )
+    # boat8 = Vehicle(
+    #     np.array([210, 105]),
+    #     length=7.0,
+    #     width=2.3,
+    #     heading=7*np.pi/4,
+    #     tau_steering=0.2,
+    #     tau_throttle=0.2,
+    #     dt=dt,
+    # )
 
-    objects = [boat0, boat1, boat2, boat3, boat4, boat5, boat6, boat7, boat8,
+    objects = [boat0, boat1, boat2, boat3, boat4, boat5, boat6, boat7,
         outer_rim, 
         windmill1, windmill2, windmill3, windmill4, windmill5, windmill6, windmill7, 
         windmill8, windmill9, windmill10, windmill11, windmill12, windmill13, windmill14, 
         windmill15, windmill16, windmill17, windmill18, windmill19, windmill20, windmill21]
-    cars = [boat0, boat1, boat2, boat3, boat4, boat5, boat6, boat7, boat8]
+    cars = [boat0, boat1, boat2, boat3, boat4, boat5, boat6, boat7]
 
     if viz:
         MAP_DIMENSIONS = (height * scale, width * scale)
