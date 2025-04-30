@@ -1787,7 +1787,13 @@ def map_circle_multi(
 
 
 def make_boat_scenario(
-    scale=1, height=1080, width=1920, scale_boat_phys=1, pixels_per_unit=10, viz=True, dt=1.0
+    scale=1,
+    height=1080,
+    width=1920,
+    scale_boat_phys=1,
+    pixels_per_unit=10,
+    viz=True,
+    dt=1.0,
 ):
     # Spawn in the walls:
     # vertices = PointsOnCircum(r=100, n=50, center=(75, 55))
@@ -1830,17 +1836,13 @@ def make_boat_scenario(
     building2 = Object(
         name="Building2",
         center=np.array([130, 60]),
-        vertices=np.array(
-            [[15, 15], [15, 35], [35, 35], [35, 15]]
-        ),
+        vertices=np.array([[15, 15], [15, 35], [35, 35], [35, 15]]),
     )
 
     building3 = Object(
         name="Building3",
         center=np.array([0, 0]),
-        vertices=np.array(
-            [[170, 50], [170, 60], [180, 60], [180, 50]]
-        ),
+        vertices=np.array([[170, 50], [170, 60], [180, 60], [180, 50]]),
     )
 
     # 0 = East
@@ -1852,7 +1854,7 @@ def make_boat_scenario(
         np.array([5, 85]),
         length=8.0,
         width=1.42,
-        heading=3*np.pi/2,
+        heading=3 * np.pi / 2,
         tau_steering=0.4,
         tau_throttle=0.4,
         dt=dt,
@@ -1861,7 +1863,7 @@ def make_boat_scenario(
         np.array([15, 75]),
         length=8.0,
         width=1.42,
-        heading=7*np.pi/4,
+        heading=7 * np.pi / 4,
         tau_steering=0.4,
         tau_throttle=0.4,
         dt=dt,
@@ -1879,7 +1881,7 @@ def make_boat_scenario(
         np.array([120, 15]),
         length=8.0,
         width=1.42,
-        heading=np.pi/2,
+        heading=np.pi / 2,
         tau_steering=0.4,
         tau_throttle=0.4,
         dt=dt,
@@ -1897,7 +1899,7 @@ def make_boat_scenario(
         np.array([175, 100]),
         length=8.0,
         width=1.42,
-        heading=3*np.pi/2,
+        heading=3 * np.pi / 2,
         tau_steering=0.4,
         tau_throttle=0.4,
         dt=dt,
@@ -1934,7 +1936,13 @@ def make_boat_scenario(
 
 
 def make_boat_scenario_bigger(
-    scale=1, height=1080, width=1920, scale_boat_phys=1, pixels_per_unit=6, viz=True, dt=1.0
+    scale=1,
+    height=1080,
+    width=1920,
+    scale_boat_phys=1,
+    pixels_per_unit=6,
+    viz=True,
+    dt=1.0,
 ):
     # Spawn in the walls:
     # vertices = PointsOnCircum(r=100, n=50, center=(75, 55))
@@ -1943,8 +1951,24 @@ def make_boat_scenario_bigger(
     outer_rim = Object(
         center=np.array([0, 0]),
         vertices=np.array(
-            [[60, 0], [30, 5], [5, 30], [0, 60], [0, 100], [5, 130], [30, 155], [60, 160], 
-            [240, 160], [270, 155], [295, 130], [300, 100], [300, 60], [295, 30], [270, 5], [240, 0]]  # Outer boundary of the harbor
+            [
+                [60, 0],
+                [30, 5],
+                [5, 30],
+                [0, 60],
+                [0, 100],
+                [5, 130],
+                [30, 155],
+                [60, 160],
+                [240, 160],
+                [270, 155],
+                [295, 130],
+                [300, 100],
+                [300, 60],
+                [295, 30],
+                [270, 5],
+                [240, 0],
+            ]  # Outer boundary of the harbor
         ),
     )
 
@@ -1967,16 +1991,12 @@ def make_boat_scenario_bigger(
     building2 = Object(
         name="Building2",
         center=np.array([0, 0]),
-        vertices=np.array(
-            [[35, 55], [35, 75], [65, 75], [65, 55]]
-        ),
+        vertices=np.array([[35, 55], [35, 75], [65, 75], [65, 55]]),
     )
     building3 = Object(
         name="Building3",
         center=np.array([0, 0]),
-        vertices=np.array(
-            [[225, 60], [225, 70], [235, 70], [235, 60]]
-        ),
+        vertices=np.array([[225, 60], [225, 70], [235, 70], [235, 60]]),
     )
 
     # 0 = East
@@ -1988,7 +2008,7 @@ def make_boat_scenario_bigger(
         np.array([80, 10]),
         length=8.0,
         width=1.42,
-        heading=3*np.pi/4,
+        heading=3 * np.pi / 4,
         tau_steering=0.4,
         tau_throttle=0.4,
         dt=dt,
@@ -1997,7 +2017,7 @@ def make_boat_scenario_bigger(
         np.array([10, 75]),
         length=8.0,
         width=1.42,
-        heading=np.pi/4,
+        heading=np.pi / 4,
         tau_steering=0.4,
         tau_throttle=0.4,
         dt=dt,
@@ -2006,7 +2026,7 @@ def make_boat_scenario_bigger(
         np.array([120, 10]),
         length=8.0,
         width=1.42,
-        heading=np.pi/4,
+        heading=np.pi / 4,
         tau_steering=0.4,
         tau_throttle=0.4,
         dt=dt,
@@ -2015,7 +2035,7 @@ def make_boat_scenario_bigger(
         np.array([80, 140]),
         length=8.0,
         width=1.42,
-        heading=5*np.pi/4,
+        heading=5 * np.pi / 4,
         tau_steering=0.4,
         tau_throttle=0.4,
         dt=dt,
@@ -2024,7 +2044,7 @@ def make_boat_scenario_bigger(
         np.array([290, 80]),
         length=8.0,
         width=1.42,
-        heading=5*np.pi/4,
+        heading=5 * np.pi / 4,
         tau_steering=0.4,
         tau_throttle=0.4,
         dt=dt,
@@ -2033,7 +2053,7 @@ def make_boat_scenario_bigger(
         np.array([120, 140]),
         length=8.0,
         width=1.42,
-        heading=7*np.pi/4,
+        heading=7 * np.pi / 4,
         tau_steering=0.4,
         tau_throttle=0.4,
         dt=dt,
@@ -2042,7 +2062,7 @@ def make_boat_scenario_bigger(
         np.array([90, 90]),
         length=7.0,
         width=2.3,
-        heading=7*np.pi/4,
+        heading=7 * np.pi / 4,
         tau_steering=0.2,
         tau_throttle=0.2,
         dt=dt,
@@ -2051,7 +2071,7 @@ def make_boat_scenario_bigger(
         np.array([140, 50]),
         length=7.0,
         width=2.3,
-        heading=np.pi/2,
+        heading=np.pi / 2,
         tau_steering=0.2,
         tau_throttle=0.2,
         dt=dt,
@@ -2095,10 +2115,16 @@ def make_boat_scenario_bigger(
         return gfx, objects, cars
     else:
         return objects, cars
-    
+
 
 def make_windmill_scnenario(
-    scale=1, height=1080, width=1920, scale_boat_phys=1, pixels_per_unit=6, viz=True, dt=1.0
+    scale=1,
+    height=1080,
+    width=1920,
+    scale_boat_phys=1,
+    pixels_per_unit=6,
+    viz=True,
+    dt=1.0,
 ):
     # Spawn in the walls:
     # vertices = PointsOnCircum(r=100, n=50, center=(75, 55))
@@ -2107,8 +2133,24 @@ def make_windmill_scnenario(
     outer_rim = Object(
         center=np.array([0, 0]),
         vertices=np.array(
-            [[60, 0], [30, 5], [5, 30], [0, 60], [0, 100], [5, 130], [30, 155], [60, 160], 
-            [240, 160], [270, 155], [295, 130], [300, 100], [300, 60], [295, 30], [270, 5], [240, 0]]  # Outer boundary of the harbor
+            [
+                [60, 0],
+                [30, 5],
+                [5, 30],
+                [0, 60],
+                [0, 100],
+                [5, 130],
+                [30, 155],
+                [60, 160],
+                [240, 160],
+                [270, 155],
+                [295, 130],
+                [300, 100],
+                [300, 60],
+                [295, 30],
+                [270, 5],
+                [240, 0],
+            ]  # Outer boundary of the harbor
         ),
     )
 
@@ -2194,7 +2236,7 @@ def make_windmill_scnenario(
         center=np.array([0, 0]),
         vertices=np.array([[65, 125], [65, 135], [75, 135], [75, 125]]),
     )
-    windmill17 = Object(    
+    windmill17 = Object(
         name="wm17",
         center=np.array([0, 0]),
         vertices=np.array([[105, 125], [105, 135], [115, 135], [115, 125]]),
@@ -2230,7 +2272,7 @@ def make_windmill_scnenario(
         np.array([90, 50]),
         length=8.0,
         width=1.42,
-        heading=3*np.pi/4,
+        heading=3 * np.pi / 4,
         tau_steering=0.4,
         tau_throttle=0.4,
         dt=dt,
@@ -2239,7 +2281,7 @@ def make_windmill_scnenario(
         np.array([205, 55]),
         length=8.0,
         width=1.42,
-        heading=np.pi/4,
+        heading=np.pi / 4,
         tau_steering=0.4,
         tau_throttle=0.4,
         dt=dt,
@@ -2248,7 +2290,7 @@ def make_windmill_scnenario(
         np.array([150, 55]),
         length=8.0,
         width=1.42,
-        heading=5*np.pi/4,
+        heading=5 * np.pi / 4,
         tau_steering=0.4,
         tau_throttle=0.4,
         dt=dt,
@@ -2259,7 +2301,7 @@ def make_windmill_scnenario(
         np.array([150, 105]),
         length=7.0,
         width=3.0,
-        heading=np.pi/4,
+        heading=np.pi / 4,
         tau_steering=0.2,
         tau_throttle=0.2,
         dt=dt,
@@ -2268,7 +2310,7 @@ def make_windmill_scnenario(
         np.array([80, 105]),
         length=7.0,
         width=3.0,
-        heading=3*np.pi/2,
+        heading=3 * np.pi / 2,
         tau_steering=0.2,
         tau_throttle=0.2,
         dt=dt,
@@ -2277,7 +2319,7 @@ def make_windmill_scnenario(
         np.array([250, 125]),
         length=7.0,
         width=3.0,
-        heading=3*np.pi/2,
+        heading=3 * np.pi / 2,
         tau_steering=0.2,
         tau_throttle=0.2,
         dt=dt,
@@ -2288,7 +2330,7 @@ def make_windmill_scnenario(
         np.array([35, 100]),
         length=7.0,
         width=2.3,
-        heading=7*np.pi/4,
+        heading=7 * np.pi / 4,
         tau_steering=0.3,
         tau_throttle=0.3,
         dt=dt,
@@ -2297,7 +2339,7 @@ def make_windmill_scnenario(
         np.array([175, 15]),
         length=7.0,
         width=2.3,
-        heading=7*np.pi/4,
+        heading=7 * np.pi / 4,
         tau_steering=0.3,
         tau_throttle=0.3,
         dt=dt,
@@ -2306,17 +2348,45 @@ def make_windmill_scnenario(
         np.array([210, 105]),
         length=7.0,
         width=2.3,
-        heading=7*np.pi/4,
+        heading=7 * np.pi / 4,
         tau_steering=0.3,
         tau_throttle=0.3,
         dt=dt,
     )
 
-    objects = [boat0, boat1, boat2, boat3, boat4, boat5, boat6, boat7, boat8,
-        outer_rim, 
-        windmill1, windmill2, windmill3, windmill4, windmill5, windmill6, windmill7, 
-        windmill8, windmill9, windmill10, windmill11, windmill12, windmill13, windmill14, 
-        windmill15, windmill16, windmill17, windmill18, windmill19, windmill20, windmill21]
+    objects = [
+        boat0,
+        boat1,
+        boat2,
+        boat3,
+        boat4,
+        boat5,
+        boat6,
+        boat7,
+        boat8,
+        outer_rim,
+        windmill1,
+        windmill2,
+        windmill3,
+        windmill4,
+        windmill5,
+        windmill6,
+        windmill7,
+        windmill8,
+        windmill9,
+        windmill10,
+        windmill11,
+        windmill12,
+        windmill13,
+        windmill14,
+        windmill15,
+        windmill16,
+        windmill17,
+        windmill18,
+        windmill19,
+        windmill20,
+        windmill21,
+    ]
     cars = [boat0, boat1, boat2, boat3, boat4, boat5, boat6, boat7, boat8]
 
     if viz:
@@ -2331,33 +2401,43 @@ def make_windmill_scnenario(
         return objects, cars
 
 
-def make_Ravnkloa(scale=1, height=1080, width=1920, scale_boat_phys=1, pixels_per_unit=6, viz=True, dt=1.0):
+def make_Ravnkloa(
+    scale=1,
+    height=1080,
+    width=1920,
+    scale_boat_phys=1,
+    pixels_per_unit=6,
+    viz=True,
+    dt=1.0,
+):
     coordinates = np.array(
-        [[126.39535427, 149.8422699 ],
-        [115.46138954, 130.11746979],
-        [ 86.76639175, 150.74557495],
-        [  0.46530151, 152.47505188],
-        [  0.43069458, 140.13030243],
-        [ 87.36730957,  70.26836014],
-        [ 90.19123077,  48.68082428],
-        [114.17981434,  25.21247864],
-        [109.96723747,  16.53200459],
-        [122.74934292,  11.55437827],
-        [135.62853718,  18.23325992],
-        [174.84262848,   2.43239594],
-        [270.4261322,    3.00952625],
-        [271.41207886,  32.26862717],
-        [173.21274567,  77.90671921],
-        [164.97928238, 102.00750732],
-        [145.00814724, 113.59357452],
-        [152.41756439, 142.64183807]]
- )
+        [
+            [126.39535427, 149.8422699],
+            [115.46138954, 130.11746979],
+            [86.76639175, 150.74557495],
+            [0.46530151, 152.47505188],
+            [0.43069458, 140.13030243],
+            [87.36730957, 70.26836014],
+            [90.19123077, 48.68082428],
+            [114.17981434, 25.21247864],
+            [109.96723747, 16.53200459],
+            [122.74934292, 11.55437827],
+            [135.62853718, 18.23325992],
+            [174.84262848, 2.43239594],
+            [270.4261322, 3.00952625],
+            [271.41207886, 32.26862717],
+            [173.21274567, 77.90671921],
+            [164.97928238, 102.00750732],
+            [145.00814724, 113.59357452],
+            [152.41756439, 142.64183807],
+        ]
+    )
 
     car1 = Vehicle(
         np.array([121, 68]),
         length=3.0,
         width=1.5,
-        heading=3*np.pi/2,
+        heading=3 * np.pi / 2,
         tau_steering=0.2,
         tau_throttle=0.2,
         dt=dt,
@@ -2366,7 +2446,7 @@ def make_Ravnkloa(scale=1, height=1080, width=1920, scale_boat_phys=1, pixels_pe
         np.array([82, 104]),
         length=3.0,
         width=1.5,
-        heading=np.pi/2,
+        heading=np.pi / 2,
         tau_steering=0.2,
         tau_throttle=0.2,
         dt=dt,
@@ -2375,7 +2455,7 @@ def make_Ravnkloa(scale=1, height=1080, width=1920, scale_boat_phys=1, pixels_pe
         np.array([107, 75]),
         length=3.0,
         width=1.5,
-        heading=3*np.pi/4,
+        heading=3 * np.pi / 4,
         tau_steering=0.2,
         tau_throttle=0.2,
         dt=dt,
@@ -2384,7 +2464,7 @@ def make_Ravnkloa(scale=1, height=1080, width=1920, scale_boat_phys=1, pixels_pe
         np.array([86, 126]),
         length=3.0,
         width=1.5,
-        heading=7*np.pi/4,
+        heading=7 * np.pi / 4,
         tau_steering=0.2,
         tau_throttle=0.2,
         dt=dt,
@@ -2393,7 +2473,7 @@ def make_Ravnkloa(scale=1, height=1080, width=1920, scale_boat_phys=1, pixels_pe
         np.array([111, 54]),
         length=3.0,
         width=1.5,
-        heading=3*np.pi/2,
+        heading=3 * np.pi / 2,
         tau_steering=0.2,
         tau_throttle=0.2,
         dt=dt,
@@ -2402,7 +2482,7 @@ def make_Ravnkloa(scale=1, height=1080, width=1920, scale_boat_phys=1, pixels_pe
         np.array([161, 40]),
         length=3.0,
         width=1.5,
-        heading=np.pi/2,
+        heading=np.pi / 2,
         tau_steering=0.2,
         tau_throttle=0.2,
         dt=dt,
@@ -2414,15 +2494,7 @@ def make_Ravnkloa(scale=1, height=1080, width=1920, scale_boat_phys=1, pixels_pe
         vertices=coordinates,
     )
 
-    objects = [
-        car1,
-        car2,
-        car3,
-        car4,
-        car5,
-        car6,
-        outer_rim
-    ]
+    objects = [car1, car2, car3, car4, car5, car6, outer_rim]
     cars = [car1, car2, car3, car4, car5, car6]
 
     if viz:
