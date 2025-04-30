@@ -1935,7 +1935,7 @@ def make_boat_scenario(
         return objects, cars
 
 
-def make_boat_scenario_bigger(
+def make_cliffs_scenario(
     scale=1,
     height=1080,
     width=1920,
@@ -1972,31 +1972,35 @@ def make_boat_scenario_bigger(
         ),
     )
 
-    pier1 = Object(
-        name="Pier1",
+    r1 = Object(
+        name="r1",
         center=np.array([0, 0]),
-        vertices=np.array([[190, 105], [190, 145], [193, 145], [193, 105]]),
+        vertices=np.array([[60, 130], [60, 145], [70, 145], [70, 130]]),
     )
-    pier2 = Object(
-        name="Pier2",
+    r2 = Object(
+        name="r2",
         center=np.array([0, 0]),
-        vertices=np.array([[155, 15], [155, 50], [161, 50], [161, 15]]),
+        vertices=np.array([[240, 70], [240, 120], [260, 120], [260, 70]]),
     )
-
-    building1 = Object(
-        name="Building1",
+    r3 = Object(
+        name="r3",
         center=np.array([0, 0]),
-        vertices=np.array([[85, 115], [85, 125], [95, 125], [95, 115]]),
+        vertices=np.array([[30, 40], [30, 60], [50, 60], [50, 40]]),
     )
-    building2 = Object(
-        name="Building2",
+    r4 = Object(
+        name="r4",
         center=np.array([0, 0]),
-        vertices=np.array([[35, 55], [35, 75], [65, 75], [65, 55]]),
+        vertices=np.array([[90, 15], [90, 25], [100, 25], [100, 15]]),
     )
-    building3 = Object(
-        name="Building3",
+    r5 = Object(
+        name="r5",
         center=np.array([0, 0]),
-        vertices=np.array([[225, 60], [225, 70], [235, 70], [235, 60]]),
+        vertices=np.array([[190, 15], [190, 30], [210, 30], [210, 15]]),
+    )
+    r6 = Object(
+        name="r6",
+        center=np.array([0, 0]),
+        vertices=np.array([[125, 55], [125, 105], [175, 105], [175, 55]]),
     )
 
     # 0 = East
@@ -2004,8 +2008,9 @@ def make_boat_scenario_bigger(
     # np.pi = West
     # 3*np.pi/2 = North
 
+    # Fisher Boat
     boat0 = Vehicle(
-        np.array([80, 10]),
+        np.array([90, 50]),
         length=8.0,
         width=1.42,
         heading=3 * np.pi / 4,
@@ -2014,7 +2019,7 @@ def make_boat_scenario_bigger(
         dt=dt,
     )
     boat1 = Vehicle(
-        np.array([10, 75]),
+        np.array([205, 55]),
         length=8.0,
         width=1.42,
         heading=np.pi / 4,
@@ -2023,66 +2028,70 @@ def make_boat_scenario_bigger(
         dt=dt,
     )
     boat2 = Vehicle(
-        np.array([120, 10]),
+        np.array([150, 50]),
         length=8.0,
         width=1.42,
-        heading=np.pi / 4,
+        heading=5 * np.pi / 4,
         tau_steering=0.4,
         tau_throttle=0.4,
         dt=dt,
     )
+
+    # Old fisher boat
     boat3 = Vehicle(
-        np.array([80, 140]),
-        length=8.0,
-        width=1.42,
-        heading=5 * np.pi / 4,
-        tau_steering=0.4,
-        tau_throttle=0.4,
-        dt=dt,
-    )
-    boat4 = Vehicle(
-        np.array([290, 80]),
-        length=8.0,
-        width=1.42,
-        heading=5 * np.pi / 4,
-        tau_steering=0.4,
-        tau_throttle=0.4,
-        dt=dt,
-    )
-    boat5 = Vehicle(
-        np.array([120, 140]),
-        length=8.0,
-        width=1.42,
-        heading=7 * np.pi / 4,
-        tau_steering=0.4,
-        tau_throttle=0.4,
-        dt=dt,
-    )
-    boat6 = Vehicle(
-        np.array([90, 90]),
+        np.array([150, 110]),
         length=7.0,
-        width=2.3,
-        heading=7 * np.pi / 4,
+        width=3.0,
+        heading=np.pi / 4,
         tau_steering=0.2,
         tau_throttle=0.2,
         dt=dt,
     )
-    boat7 = Vehicle(
-        np.array([140, 50]),
+    boat4 = Vehicle(
+        np.array([80, 105]),
         length=7.0,
-        width=2.3,
+        width=3.0,
+        heading=3 * np.pi / 2,
+        tau_steering=0.2,
+        tau_throttle=0.2,
+        dt=dt,
+    )
+    boat5 = Vehicle(
+        np.array([250, 125]),
+        length=7.0,
+        width=3.0,
         heading=np.pi / 2,
         tau_steering=0.2,
         tau_throttle=0.2,
         dt=dt,
     )
-    boat8 = Vehicle(
-        np.array([190, 90]),
+
+    # Res boat
+    boat6 = Vehicle(
+        np.array([35, 100]),
         length=7.0,
         width=2.3,
-        heading=0,
-        tau_steering=0.2,
-        tau_throttle=0.2,
+        heading=7 * np.pi / 4,
+        tau_steering=0.3,
+        tau_throttle=0.3,
+        dt=dt,
+    )
+    boat7 = Vehicle(
+        np.array([175, 15]),
+        length=7.0,
+        width=2.3,
+        heading=7 * np.pi / 4,
+        tau_steering=0.3,
+        tau_throttle=0.3,
+        dt=dt,
+    )
+    boat8 = Vehicle(
+        np.array([210, 105]),
+        length=7.0,
+        width=2.3,
+        heading=7 * np.pi / 4,
+        tau_steering=0.3,
+        tau_throttle=0.3,
         dt=dt,
     )
 
@@ -2097,11 +2106,12 @@ def make_boat_scenario_bigger(
         boat7,
         boat8,
         outer_rim,
-        pier1,
-        pier2,
-        building1,
-        building2,
-        building3,
+        r1,
+        r2,
+        r3,
+        r4,
+        r5,
+        r6,
     ]
     cars = [boat0, boat1, boat2, boat3, boat4, boat5, boat6, boat7, boat8]
 
@@ -2513,7 +2523,7 @@ def driving_with_many_boats():
     # Create a visualizer
     divider = 10
     dt = 1 / divider
-    gfx, objects, cars = make_windmill_scnenario(
+    gfx, objects, cars = make_cliffs_scenario(
         scale=1, scale_boat_phys=5, height=1080, width=1920, dt=dt
     )
     # gfx, objects, cars = map_tube_multi(scale=1, height=1080, width=1920, pixels_per_unit=10)
