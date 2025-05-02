@@ -2008,8 +2008,19 @@ def make_cliffs_scenario(
     # np.pi = West
     # 3*np.pi/2 = North
 
+    # BlueBoat
+    blueboat = Vehicle(
+        np.array([5, 80]),
+        length=1.2,
+        width=1.0,
+        heading=0,
+        tau_steering=0.2,
+        tau_throttle=0.2,
+        dt=dt,
+    )
+
     # Fisher Boat
-    boat0 = Vehicle(
+    boat1 = Vehicle(
         np.array([90, 50]),
         length=8.0,
         width=1.42,
@@ -2018,7 +2029,7 @@ def make_cliffs_scenario(
         tau_throttle=0.4,
         dt=dt,
     )
-    boat1 = Vehicle(
+    boat2 = Vehicle(
         np.array([205, 55]),
         length=8.0,
         width=1.42,
@@ -2027,7 +2038,7 @@ def make_cliffs_scenario(
         tau_throttle=0.4,
         dt=dt,
     )
-    boat2 = Vehicle(
+    boat3 = Vehicle(
         np.array([150, 50]),
         length=8.0,
         width=1.42,
@@ -2038,7 +2049,7 @@ def make_cliffs_scenario(
     )
 
     # Old fisher boat
-    boat3 = Vehicle(
+    boat4 = Vehicle(
         np.array([150, 110]),
         length=7.0,
         width=3.0,
@@ -2047,7 +2058,7 @@ def make_cliffs_scenario(
         tau_throttle=0.2,
         dt=dt,
     )
-    boat4 = Vehicle(
+    boat5 = Vehicle(
         np.array([80, 105]),
         length=7.0,
         width=3.0,
@@ -2056,7 +2067,7 @@ def make_cliffs_scenario(
         tau_throttle=0.2,
         dt=dt,
     )
-    boat5 = Vehicle(
+    boat6 = Vehicle(
         np.array([250, 125]),
         length=7.0,
         width=3.0,
@@ -2067,7 +2078,7 @@ def make_cliffs_scenario(
     )
 
     # Res boat
-    boat6 = Vehicle(
+    boat7 = Vehicle(
         np.array([35, 100]),
         length=7.0,
         width=2.3,
@@ -2076,7 +2087,7 @@ def make_cliffs_scenario(
         tau_throttle=0.3,
         dt=dt,
     )
-    boat7 = Vehicle(
+    boat8 = Vehicle(
         np.array([175, 15]),
         length=7.0,
         width=2.3,
@@ -2085,18 +2096,18 @@ def make_cliffs_scenario(
         tau_throttle=0.3,
         dt=dt,
     )
-    boat8 = Vehicle(
+    boat9 = Vehicle(
         np.array([210, 105]),
         length=7.0,
         width=2.3,
-        heading=7 * np.pi / 4,
+        heading=np.pi,
         tau_steering=0.3,
         tau_throttle=0.3,
         dt=dt,
     )
 
     objects = [
-        boat0,
+        blueboat,
         boat1,
         boat2,
         boat3,
@@ -2105,6 +2116,7 @@ def make_cliffs_scenario(
         boat6,
         boat7,
         boat8,
+        boat9,
         outer_rim,
         r1,
         r2,
@@ -2113,7 +2125,7 @@ def make_cliffs_scenario(
         r5,
         r6,
     ]
-    cars = [boat0, boat1, boat2, boat3, boat4, boat5, boat6, boat7, boat8]
+    cars = [blueboat, boat1, boat2, boat3, boat4, boat5, boat6, boat7, boat8, boat9]
 
     if viz:
         MAP_DIMENSIONS = (height * scale, width * scale)
@@ -2277,8 +2289,20 @@ def make_windmill_scnenario(
     # np.pi = West
     # 3*np.pi/2 = North
 
+
+    # BlueBoat
+    blueboat = Vehicle(
+        np.array([5, 80]),
+        length=1.2,
+        width=0.926,
+        heading=0,
+        tau_steering=0.1,
+        tau_throttle=0.1,
+        dt=dt,
+    )
+
     # Fisher Boat
-    boat0 = Vehicle(
+    boat1 = Vehicle(
         np.array([90, 50]),
         length=8.0,
         width=1.42,
@@ -2287,7 +2311,7 @@ def make_windmill_scnenario(
         tau_throttle=0.4,
         dt=dt,
     )
-    boat1 = Vehicle(
+    boat2 = Vehicle(
         np.array([205, 55]),
         length=8.0,
         width=1.42,
@@ -2296,7 +2320,7 @@ def make_windmill_scnenario(
         tau_throttle=0.4,
         dt=dt,
     )
-    boat2 = Vehicle(
+    boat3 = Vehicle(
         np.array([150, 55]),
         length=8.0,
         width=1.42,
@@ -2307,7 +2331,7 @@ def make_windmill_scnenario(
     )
 
     # Old fisher boat
-    boat3 = Vehicle(
+    boat4 = Vehicle(
         np.array([150, 105]),
         length=7.0,
         width=3.0,
@@ -2316,7 +2340,7 @@ def make_windmill_scnenario(
         tau_throttle=0.2,
         dt=dt,
     )
-    boat4 = Vehicle(
+    boat5 = Vehicle(
         np.array([80, 105]),
         length=7.0,
         width=3.0,
@@ -2325,7 +2349,7 @@ def make_windmill_scnenario(
         tau_throttle=0.2,
         dt=dt,
     )
-    boat5 = Vehicle(
+    boat6 = Vehicle(
         np.array([250, 125]),
         length=7.0,
         width=3.0,
@@ -2336,7 +2360,7 @@ def make_windmill_scnenario(
     )
 
     # Res boat
-    boat6 = Vehicle(
+    boat7 = Vehicle(
         np.array([35, 100]),
         length=7.0,
         width=2.3,
@@ -2345,7 +2369,7 @@ def make_windmill_scnenario(
         tau_throttle=0.3,
         dt=dt,
     )
-    boat7 = Vehicle(
+    boat8 = Vehicle(
         np.array([175, 15]),
         length=7.0,
         width=2.3,
@@ -2354,7 +2378,7 @@ def make_windmill_scnenario(
         tau_throttle=0.3,
         dt=dt,
     )
-    boat8 = Vehicle(
+    boat9 = Vehicle(
         np.array([210, 105]),
         length=7.0,
         width=2.3,
@@ -2365,7 +2389,7 @@ def make_windmill_scnenario(
     )
 
     objects = [
-        boat0,
+        blueboat,
         boat1,
         boat2,
         boat3,
@@ -2374,6 +2398,7 @@ def make_windmill_scnenario(
         boat6,
         boat7,
         boat8,
+        boat9,
         outer_rim,
         windmill1,
         windmill2,
@@ -2397,7 +2422,7 @@ def make_windmill_scnenario(
         windmill20,
         windmill21,
     ]
-    cars = [boat0, boat1, boat2, boat3, boat4, boat5, boat6, boat7, boat8]
+    cars = [blueboat, boat1, boat2, boat3, boat4, boat5, boat6, boat7, boat8, boat9]
 
     if viz:
         MAP_DIMENSIONS = (height * scale, width * scale)
